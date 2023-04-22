@@ -1,0 +1,228 @@
+.drawer-profile {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-profile-header {
+  background-color: var(--drawerBlueClr);
+  padding: 30px;
+}
+
+.drawer-profile-clear {
+  cursor: pointer;
+}
+
+.editprofiletext {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--primaryFontClr);
+  padding-top: 0.8em;
+}
+
+.editProfileImage {
+  text-align: center;
+  align-items: center;
+  padding-top: 20px;
+  position: relative;
+}
+.editProfileImage img {
+  height: 80px;
+  width: 80px;
+  position: relative;
+}
+/*Custom Input type file*/
+.custom-file-input {
+  color: transparent;
+  width: 45px;
+  margin-bottom: 2px;
+  position: absolute;
+  bottom: 0px;
+  margin-bottom: -14px;
+  margin-left: -30px;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: url(../../../../assets/images/start-courses-image/icn_change_profilepic.png);
+  display: inline-block;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+.custom-file-input:focus {
+  outline: none;
+  border: none;
+}
+.custom-file-input:hover::before {
+  border: none;
+  outline: none;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+/* .custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+} */
+
+/*Custom Input type file*/
+
+.editProfileForm {
+  padding: 1rem 3rem;
+}
+
+.editPInput {
+  width: 100%;
+  margin-top: 1.5rem;
+  padding: 1px 0;
+  border: none;
+  border-bottom: 1px solid #072d5b;
+  transition: border-color 0.2s ease;
+  background-color: transparent;
+  color: #072d5b;
+  font-weight: 700;
+  font-family: Avenir;
+  font-size: 19px;
+}
+.editprofilelabel {
+  display: block;
+  transform: translate(0, -1.75rem);
+  font-size: 17px;
+  font-family: Avenir;
+  line-height: 11px;
+}
+.editprofilelabelGender {
+  color: #7a7a7a;
+  font-size: 12px;
+  font-family: Avenir;
+  margin-top: 40px;
+}
+
+.editprofilelabel,
+.editPInput {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+.editPInput:focus {
+  outline: none;
+  border-color: #6e8fca;
+  font-family: Avenir;
+}
+
+#gender {
+  padding-top: 1px;
+  border: none;
+  border-bottom: 1px solid #072d5b;
+  outline: none;
+  margin-bottom: 11px;
+  color: #072d5b;
+  font-size: 19px;
+  font-family: Avenir;
+  font-weight: 700;
+  /* margin-left: -5px; */
+}
+
+#editPOccupation {
+  padding-top: 1px;
+  border: none;
+  border-bottom: 1px solid #072d5b;
+  outline: none;
+  margin-bottom: 12px;
+  color: #072d5b;
+  font-size: 19px;
+  font-family: Avenir;
+  font-weight: 700;
+  /* margin-left: -5px; */
+}
+@supports (not (-ms-ime-align: auto)) {
+  .editprofilelabel {
+    color: #7a7a7a;
+    transform: translate(0rem, -1.9rem);
+    transition: all 0.2s ease-out;
+  }
+
+  .editPInput:focus + label,
+  .editPInput:not(:placeholder-shown) + label {
+    color: #7a7a7a;
+    transform: translate(0, -2.95rem);
+  }
+}
+
+.editPbtn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  outline: none;
+  background-color: #ee5c4d;
+  color: var(--primaryFontClr);
+  font-weight: bold;
+  width: 100%;
+  margin-top: 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.genderSection {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+}
+.genderSection label {
+  color: #7a7a7a;
+  font-size: 16px;
+  font-family: Avenir;
+  margin-top: -3px;
+}
+.occupationSection {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+}
+.occupationSection label {
+  color: #7a7a7a;
+  font-size: 16px;
+  font-family: Avenir;
+  margin-top: -3px;
+  margin-bottom: 4px;
+}
+option {
+  color: #072d5b;
+}
+.edit-error-line {
+  position: absolute;
+  background-color: red;
+  width: 100%;
+  height: 2px;
+  top: 40px;
+  padding-left: -4px;
+  left: 0px;
+}
+.edit-form-error {
+  color: rgb(255, 57, 57);
+  font-size: 14px;
+  width: 100%;
+  /* line-height: 1pt; */
+  padding-left: 0px;
+  margin-top: -15px;
+}
+
+.edit-error-input {
+  position: relative;
+}
+
+.EditForm {
+  position: relative;
+  overflow: scroll;
+}
+
+
+/* style by snehal */
+#ProfileImage{
+  border-radius: 6px;
+  border: 3px solid white;
+}

@@ -1,0 +1,332 @@
+.loginAuth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.loginAuth-title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  text-align: center;
+  color: var(--primaryFontClr);
+  padding-bottom: 20px;
+}
+
+.loginAuth-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: var(--secondaryFontClr);
+  padding-bottom: 40px;
+}
+
+.loginAuth-buttons {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 8%;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.loginAuth-buttons > button {
+  background: var(--primaryFontClr);
+  border: 1px solid rgba(119, 134, 158, 0.297312);
+  border-radius: 6px;
+  width: 100%;
+  padding: 11px 0;
+  cursor: no-drop;
+}
+
+.loginAuth-Form {
+  width: 100%;
+}
+
+.loginAuth-FormContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginAuth-FormContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.loginAuth-FormInput {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.loginAuth-FormInput {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+}
+
+/**
+* Add a transition to the label and input.
+* I'm not even sure that touch-action: manipulation works on
+* inputs, but hey, it's new and cool and could remove the 
+* pesky delay.
+*/
+
+.loginAuth-FormContainer label,
+.loginAuth-formInput {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+.loginAuth-formInput {
+  font-size: 10px;
+  border: 0;
+  border-bottom: 2px solid #ffffff57;
+  font-family: inherit;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 10px 0;
+  font-size: 20px;
+  color: var(--primaryFontClr);
+  cursor: text;
+  background: none;
+  outline: none;
+}
+
+.loginAuth-FormContainer label {
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
+}
+
+/**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* loginAuth-FormInput—to make sure it scales properly and doesn't wrap.
+*/
+
+.loginAuth-formInput:placeholder-shown + label {
+  cursor: text;
+  max-width: 66.66%;
+  font-family: "Avenir";
+  white-space: nowrap;
+  color: var(--labelClr);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  font-size: 10px;
+  transform: translate(0, 2.125rem) scale(1.5);
+  font-size: 12px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+
+.loginAuth-formInput:focus::-webkit-input-placeholder {
+  opacity: 0;
+}
+
+.loginAuth-formInput:not(:placeholder-shown) + label,
+.loginAuth-formInput:focus + label {
+  transform: translate(0, 0) scale(1);
+  /* cursor: pointer; */
+  color: var(--labelClr);
+  font-family: Avenir;
+  font-size: 15px;
+}
+
+.loginAuth-formSubmit {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: var(--secondaryClr);
+  color: var(--primaryFontClr);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 4% 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.loginAuth-noAccount {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  /* identical to box height, or 130% */
+  text-align: center;
+  color: var(--primaryFontClr);
+  letter-spacing: 1px;
+}
+
+.loginAuth-regLink {
+  color: var(--secondaryClr);
+  cursor: pointer;
+}
+
+.loginAuth-formInputError {
+  border-bottom: 2px solid var(--error) !important;
+  background-image: url("../../../../assets/icons/icn_textfield_wrong.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.loginAuth-formInputSuccess {
+  border-bottom: 2px solid var(--success) !important;
+  background-image: url("../../../../assets/icons/icn_textfield_right.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.Toastify {
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  left: 0 !important;
+}
+
+button.Toastify__close-button.Toastify__close-button--light {
+  display: none !important;
+}
+
+.loginAuth-showError {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+}
+
+.Toastify__toast-theme--light {
+  background: var(--error) !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.Toastify__toast-container--bottom-right {
+  position: fixed !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  width: 32% !important;
+}
+
+.loginAuth-showErrorMessage {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 120%;
+  line-height: 26px;
+  text-align: center;
+  color: var(--primaryFontClr);
+}
+
+.loginAuth-formSubmit:disabled {
+  cursor: no-drop;
+}
+
+.loginAuth-backButton {
+  display: none;
+}
+
+@media screen and (max-width: 940px) {
+  .loginAuth-title {
+    color: var(--filterChipFontClr);
+    font-family: Biko;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 35px;
+    width: 100%;
+    text-align: left;
+    padding-top: 34px;
+    padding-bottom: 10px;
+  }
+  .loginAuth-text {
+    color: var(--greyFont);
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: left;
+    width: 100%;
+    padding-bottom: 60px;
+  }
+  .loginAuth-formInput:not(:placeholder-shown) + label,
+  .loginAuth-formInput:focus + label {
+    color: var(--greyFont);
+    font-family: Avenir;
+    font-size: 14px;
+  }
+  .loginAuth-formInput:placeholder-shown + label {
+    color: var(--greyFont);
+    font-size: 12px;
+  }
+
+  .loginAuth-formInput {
+    color: var(--drawerBlueClr);
+    font-size: 19px;
+    letter-spacing: 0.4px;
+    line-height: 20px;
+    border-bottom: 0.5px solid var(--greyFont);
+  }
+  .loginAuth-formInput p {
+    margin-top: 10px !important;
+  }
+  .loginAuth-regLink {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.29px;
+    line-height: 17px;
+  }
+  .loginAuth-noAccount {
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 26px;
+    width: 100%;
+    text-align: left;
+    text-align: left;
+    color: var(--greyFont);
+  }
+  .loginAuth-FormContainer {
+    padding: 0 !important;
+  }
+  .loginAuth-backButton {
+    display: block;
+    width: 100%;
+  }
+  .Toastify__toast-container--bottom-right {
+    width: 100vw !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+}

@@ -1,0 +1,126 @@
+.login-verification {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-verification-heading {
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.login-verification-content {
+  color: rgba(255, 255, 255, 0.511);
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 20px;
+  width: 75%;
+  line-height: 26px;
+}
+
+.login-verification-form {
+  padding-top: 9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.otp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 2rem;
+}
+
+/* 
+.otp-input {
+    height: 70px;
+    width: 90px;
+    outline: none;
+    font-size: 20px;
+    background-color: transparent;
+    color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.411);
+} */
+
+.resend-otp {
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  color: var(--primaryFontClr);
+  margin: 30px 0 45px 0;
+}
+
+.resend-otp span {
+  color: var(--secondaryClr);
+  cursor: pointer;
+}
+
+.verify-otp-button {
+  height: 44px;
+  background-color: var(--secondaryClr);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primaryFontClr);
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  /* width: 100%; */
+}
+
+@media screen and (max-width: 940px) {
+  .login-verification-heading {
+    color: var(--filterChipFontClr);
+    font-family: Biko;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 35px;
+    width: 100%;
+    text-align: left;
+    padding-top: 34px;
+    padding-bottom: 10px;
+  }
+  .login-verification-content {
+    color: var(--greyFont);
+    font-size: 18px;
+    font-weight: 100;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: left;
+    width: 100%;
+    padding-bottom: 60px;
+  }
+  .otp {
+    margin: 0;
+  }
+
+  .otp > div > input {
+    color: var(--drawerBlueClr) !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.4px !important;
+    line-height: 20px !important;
+    border-bottom: 0.5px solid var(--greyFont) !important;
+  }
+  .resend-otp {
+    font-weight: 100;
+    font-size: 18px;
+    line-height: 26px;
+    width: 100%;
+    text-align: center;
+    color: var(--greyFont);
+    margin-bottom: 80px;
+  }
+  .resend-otp span {
+    font-weight: 700;
+  }
+}

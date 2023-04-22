@@ -1,0 +1,135 @@
+ul.breadcrumb-categories {
+  padding: 30px 0 30px 0;
+  list-style: none;
+}
+
+ul.breadcrumb-categories li {
+  display: inline;
+  font-size: 18px;
+}
+
+ul.breadcrumb-categories li+li:before {
+  padding: 8px;
+  color: var(--greyFont);
+  content: "/\00a0";
+}
+
+ul.breadcrumb-categories li a {
+  color: var(--greyFont);
+  text-decoration: none;
+  font-family: Biko;
+}
+
+ul.breadcrumb-categories li a:hover {
+  color: #01447e;
+  /* text-decoration: underline; */
+}
+
+.categories-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.categories-body-choose {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  /* text-align: center; */
+  color: #747474;
+}
+
+.categories-body-display {
+     /* display: grid; */
+     display: flex;
+     /* grid-template-columns: auto auto auto auto auto; */
+     /* background-color: red; */
+     width: 100%;
+     gap: 10px;
+     margin-top: 3em;
+     justify-content: center;
+     flex-wrap: wrap;
+}
+
+.categoriesDisplay-home-parent {
+  color: var(--chipFontclr);
+  background-color: var(--primaryFontClr);
+  border-radius: 6px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 9rem;
+  height: 125px;
+  /* height: auto; */
+  gap: 15px;
+}
+
+.categories-home-Icons img
+{
+  height: 54px;
+  width: 48px;
+}
+
+.categories-home-chipBorder {
+  border: 1px solid var(--chipBorder);
+  color: var(--filterChipFontClr) !important;
+  flex-basis: 13%;
+}
+
+.categories-home-Names {
+  width: max-content;
+  font-size: 18px;
+}
+.categories-home-chipBorder:hover{
+  box-shadow: 1px 1px 24px 0px rgba(0, 0, 0, 0.44);
+}
+
+
+@media only screen and (max-width: 800px) {
+  .categories-home-chipBorder {
+    flex-basis: 31%;
+  }
+
+  ul.breadcrumb-categories li a {
+    
+    color: #2B2B2B;
+    font-family: Biko;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 35px;
+  }
+  ul.breadcrumb-categories
+  {
+    padding: 5px 0 15px 0;
+  }
+
+  .categories-body-choose 
+  {
+    font-size: 20px;
+  }
+  .categories-body-display 
+  {
+    margin-top: 3em;
+    justify-content: flex-start;
+    /* flex-direction: column; */
+    align-items: center;
+    /* gap: 38px; */
+  }
+  .categoriesDisplay-home-parent
+  {
+    height: 103px;
+  }
+
+
+ 
+
+
+
+}

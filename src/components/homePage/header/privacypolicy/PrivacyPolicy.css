@@ -1,0 +1,37 @@
+.drawer-profile-privacy {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-profile-header-privacy {
+  background-color: var(--drawerBlueClr);
+  padding: 30px;
+}
+.drawer-profile-clear-privacy {
+  cursor: pointer;
+}
+.privacy-policy-text p {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--primaryFontClr);
+  padding-top: 0.8em;
+}
+.privacy-policy-phrases{
+    margin: 6% 6%;
+    overflow: scroll;
+}
+
+.para{
+    margin-bottom: 1em;
+      font-family: 'Proxima Nova Soft';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 26px;
+color: #373737;
+text-align: justify;
+}
+

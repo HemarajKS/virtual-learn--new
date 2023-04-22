@@ -1,0 +1,131 @@
+.welcomeScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 10%;
+}
+
+.welcome-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  text-align: center;
+  color: var(--primaryFontClr);
+  padding-bottom: 20px;
+}
+
+.welcome-text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: var(--secondaryFontClr);
+  padding-bottom: 70px;
+}
+
+.welcome-btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: var(--primaryFontClr);
+  padding-bottom: 30px;
+}
+
+button.welcome-btn {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: none;
+  border: 2px solid var(--secondaryClr);
+  color: var(--secondaryClr);
+  font-size: 18px;
+  font-weight: 700;
+  padding: 4% 0;
+  cursor: pointer;
+}
+
+button.welcome-btn:hover {
+  background-color: var(--secondaryClr);
+  color: var(--primaryFontClr);
+}
+
+.welcome-footer {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 26px;
+  text-align: center;
+  color: var(--primaryFontClr);
+}
+
+.welcome-footer-links {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--blueFontClr);
+}
+
+.welconescreen-landingIllustration {
+  display: none;
+}
+
+@media screen and (max-width: 940px) {
+  .welcome-title {
+    font-family: Biko;
+    color: var(--blackFontClr);
+    padding-top: 50px;
+    text-align: left;
+    width: 100%;
+    font-size: 26px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 35px;
+    padding-bottom: 5px;
+  }
+  .welcome-text {
+    color: var(--greyFont);
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 20px;
+    width: 100%;
+    text-align: left;
+    padding-bottom: 55px;
+  }
+  .welcome-footer {
+    font-size: 14px;
+    letter-spacing: 0;
+    color: var(--chipFontclr);
+    line-height: 20px;
+    text-align: center;
+  }
+  .welcome-btns {
+    color: var(--chipFontclr);
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+    gap: 20px;
+  }
+  .welcome-footer a {
+    color: var(--blueFont);
+  }
+  .welconescreen-landingIllustration {
+    display: flex;
+    width: 100%;
+  }
+  .welconescreen-landingIllustration > img {
+    width: 100%;
+  }
+  .welcomeScreen {
+    padding: 0 24%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .welcomeScreen {
+    padding: 0 10%;
+  }
+}

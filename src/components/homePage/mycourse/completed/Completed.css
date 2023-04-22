@@ -1,0 +1,106 @@
+.completed-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1%;
+}
+
+.completed-parent {
+  margin-top: 1em;
+  display: flex;
+  flex-basis: 32%;
+  width: 100%;
+}
+
+.completed-images {
+  position: relative;
+  width: 100%;
+  /* object-fit: cover; */
+}
+
+.comp-img {
+  border-radius: 10px;
+  height: 234px;
+  /* width: 350px; */
+  width: 100%;
+}
+
+.comp-overlay {
+  background-color: rgba(0, 0, 0, 0.261);
+  position: absolute;
+  top: 0;
+  bottom: 4px;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+}
+
+.completed-chap-progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 15px;
+  margin-left: 1em;
+}
+
+.completed-text {
+  padding-bottom: 3.5em;
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.completed-chap-descp p:nth-child(1) {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.completed-chap-descp p:nth-child(2) {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  color: #ffffff;
+}
+
+.noCompleted-course {
+  font-family: "Biko";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 35px;
+  text-align: center;
+  color: #747474;
+  /* margin-top: 300px; */
+}
+
+.btn-continue-completed {
+  background-color: #ec5d52;
+  border-radius: 4px;
+  border: none;
+  color: #ffffff;
+  padding: 0.7em 3em;
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  cursor: pointer;
+}
+.completedEmptyImage {
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  padding-top: 99px;
+}
+.completed-image {
+  width: 357px;
+  height: 344px;
+}
+.emptyImageCourse img{
+  
+}
+

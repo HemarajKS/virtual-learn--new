@@ -1,0 +1,174 @@
+ul.breadcrumb {
+  padding: 15px 0 30px 0;
+  list-style: none;
+}
+
+ul.breadcrumb li {
+  display: inline;
+  font-size: 18px;
+}
+
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: #2bb5f4;
+  content: ' >';
+}
+
+ul.breadcrumb li a {
+  color: #2bb5f4;
+  text-decoration: none;
+  font-family: Biko;
+}
+
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+.mycourse-body {
+  /* background-color: aliceblue; */
+  display: flex;
+  flex-direction: column;
+}
+
+.mycourse-emptyImg-section {
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mycourse-imgText {
+  margin-top: 1.2em;
+}
+
+.mycourse-imgText p {
+  font-family: 'Proxima Nova Soft';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  text-align: center;
+  color: var(--filterChipFontClr);
+}
+
+.mycourse-Desc {
+  margin-top: 0.3em;
+}
+
+.mycourse-Desc p {
+  font-family: 'Proxima Nova Soft';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  text-align: center;
+  color: var(--greyFont);
+}
+.mobile-myCourse p {
+  color: #2b2b2b;
+  font-family: 'Proxima Nova Soft';
+  font-size: 26px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-bottom: 38px;
+}
+.mycourse-categoriesSection {
+  /* background-color: pink; */
+}
+
+.categories-heading p {
+  font-family: 'Biko';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  color: var(--black);
+}
+
+.categories-eachCategories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  margin-top: 1em;
+}
+
+.categoriesDisplay-parent {
+  color: var(--chipFontclr);
+  background-color: var(--primaryFontClr);
+  border-radius: 4px;
+  padding: 6px 20px;
+  cursor: pointer;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.categories-chipBorder {
+  border: 1px solid var(--chipBorder);
+  color: var(--filterChipFontClr) !important;
+}
+
+.nav-links {
+  display: flex;
+  width: 15%;
+  background-color: white;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #ffffff34;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-family: 'Proxima Nova Soft';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+  color: var(--greyFont);
+}
+
+.mycourse-tabs {
+  display: flex;
+  align-items: center;
+  height: 36px;
+}
+
+.mycourse-tab-active {
+  height: 100%;
+  margin-right: 15px;
+  padding-top: 8px;
+  text-align: center;
+  background-color: #042c5c;
+  color: white;
+  width: 7rem;
+  border-radius: 6px;
+}
+.mycourse-tab {
+  height: 100%;
+  margin-right: 15px;
+  padding-top: 8px;
+  text-align: center;
+  color: grey;
+  width: 7rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.mobile-myCourse {
+  display: none;
+}
+
+.homeCategories-head-link {
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 760px) {
+  .homeCategories-head-link {
+    display: none !important;
+  }
+  .mobile-myCourse {
+    display: block;
+  }
+}

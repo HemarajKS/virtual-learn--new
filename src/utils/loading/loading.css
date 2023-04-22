@@ -1,0 +1,43 @@
+.Loading {
+    position: fixed;
+    z-index: 99999999;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.Loading-play {
+    transition: 300ms ease-in-out all;
+    animation: play 3s infinite;
+}
+
+.Loading-outline {}
+
+@keyframes play {
+    0% {
+        transform: scale(0.5);
+        transform-origin: center;
+    }
+    25% {
+        transform: scale(1.5);
+        transform-origin: center;
+    }
+    50% {
+        transform: scale(0.5);
+        transform-origin: center;
+    }
+    75% {
+        transform: scale(1.5);
+        transform-origin: center;
+    }
+    100% {
+        transform: scale(0.5);
+        transform-origin: center;
+    }
+}

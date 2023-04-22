@@ -1,0 +1,716 @@
+.start-greeting {
+  font-size: 22px;
+  font-family: "Biko";
+  font-style: normal;
+  font-weight: 400;
+  /* line-height: 50px; */
+  color: #7a7a7a;
+}
+
+.start-username {
+  font-family: "Biko";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 50px;
+  color: #092963;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
+
+.start-course1 {
+  display: flex !important;
+  /* justify-content: space-between; */
+  flex: 100% !important;
+  gap: 1% !important;
+  /* flex-wrap: wrap; */
+  padding-top: 15px;
+}
+
+.start-course1-first {
+  display: flex;
+  /* justify-content: space-between; */
+  flex: 100%;
+  gap: 30px;
+}
+
+.start-course1-image img {
+  /* height: 100%; */
+  margin: 0;
+  width: 100%;
+  height: 246px;
+  border-radius: 5px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  object-fit: cover;
+}
+
+.start-image-title {
+  position: relative;
+}
+
+.start-title-text {
+  position: absolute;
+  bottom: 18px;
+  left: 36px;
+  /* font-family: 'Biko'; */
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  /* line-height: 50px; */
+  color: var(--primaryFontClr);
+  cursor: pointer;
+}
+
+.start-course1-image-first img {
+  height: 100%;
+  margin: 0;
+  width: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.start-course1-image:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.start-course1-image {
+  position: relative;
+  flex-basis: 32.3%;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.start-course1-image-first {
+  position: relative;
+  flex-basis: 33.3%;
+}
+
+.start-card {
+  padding-top: 15px;
+  display: flex;
+}
+
+.start-card2 {
+  display: flex;
+}
+
+.start-card-first {
+  padding-top: 20px;
+}
+
+.start-card1 {
+  padding-top: 20px;
+}
+
+.start-course-title {
+  position: absolute;
+  /* top: 144px; */
+  left: 20px;
+  bottom: 19px;
+  font-family: "Biko";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.start-course-title-first {
+  /* position: absolute; */
+  /* top: 144px; */
+  left: 20px;
+  bottom: 19px;
+  font-family: "Biko";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  color: #ffffff;
+  z-index: 1;
+}
+
+.Slxdj:disabled {
+  cursor: not-allowed;
+  display: none;
+}
+
+.kXteup {
+  display: none;
+}
+
+.start-image-title {
+  position: relative;
+  width: 100%;
+}
+
+.start-course-section2 {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 18px;
+  width: 99%;
+}
+
+.start-course-section2-first {
+  display: flex;
+  justify-content: space-between;
+  /* padding-top: 30px; */
+  width: 99%;
+}
+
+.start-ongoing-courses {
+  font-family: "Biko";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 50px;
+  color: #000000;
+}
+
+.start-seeall {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: right;
+  color: #7a7a7a;
+  cursor: pointer;
+}
+
+.start-title-container {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  /* top: 125px; */
+  bottom: 32px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 11px;
+}
+
+.start-course-button {
+  background: #ec5d52;
+  border-radius: 4px;
+  border: none;
+  color: var(--primaryFontClr);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.start-course-section2-title {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  /* line-height: 50px; */
+  color: #ffffff;
+}
+
+.start-title-chapter {
+  text-align: start;
+}
+
+.start-course-chapter {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.start-course-categories-Body {
+  display: flex;
+  gap: 24px;
+  flex-direction: row;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.start-course-categories-Parent {
+  display: flex;
+  mix-blend-mode: normal;
+  border: 1px solid #e4e4e4;
+  border-radius: 6px;
+  padding: 0.5rem 0.5rem;
+  cursor: pointer;
+}
+
+.start-course-categories-Name {
+  padding-left: 1rem;
+  width: max-content;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.start-choice-course-subcategory {
+  display: flex;
+}
+
+.start-subcategory-all {
+  padding: 1rem;
+}
+
+.start-choice-subcategory-image img {
+  height: 184px;
+  margin: 0;
+  width: 100%;
+  /* border-radius: 5px; */
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  object-fit: cover;
+}
+
+.start-choice-subcategory-image {
+  background: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  /* height: 183px; */
+  /* width: 291px; */
+  flex-basis: 24%;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* Added by Snehal */
+.start-choice-subcategory-image:hover {
+  transition: all 0.1s ease-in-out;
+  transform: scale(1.05);
+  -webkit-box-shadow: 1px 1px 24px 0px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 1px 1px 24px 0px rgba(0, 0, 0, 0.44);
+  box-shadow: 1px 1px 24px 0px rgba(0, 0, 0, 0.44);
+}
+
+/* Added by Snehal */
+
+.start-choice1 {
+  display: flex;
+  flex: 100%;
+  gap: 1%;
+  flex-wrap: wrap;
+}
+
+.start-choice-subcategory-title {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  /* line-height: 26px; */
+  padding-left: 1rem;
+  padding-top: 0.8rem;
+  /* or 144% */
+
+  color: #111111;
+}
+
+.start-choice-chapter {
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #7a7a7a;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+}
+
+.start-chapter-time {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  gap: 0.5rem;
+  font-family: "Proxima Nova Soft";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  /* identical to box height, or 162% */
+
+  color: #7a7a7a;
+}
+
+.start-image-pause {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-pauseIcon {
+  position: absolute;
+  /* top: 77px; */
+  /* left: 121px; */
+  cursor: pointer;
+}
+
+.start-designbtn {
+  position: absolute;
+  right: 12px;
+  bottom: 14px;
+  background: #fcbe4b;
+  mix-blend-mode: normal;
+  border-radius: 6px;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.start-course-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 4px;
+  left: 0;
+  background-color: #0000003b;
+  /* opacity: 0.2; */
+  border-radius: 6px;
+  /* border-top-left-radius: 6px; */
+  /* border-top-right-radius: 6px; */
+}
+
+.start-course-overlay-2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #0000003b;
+  /* opacity: 0.2; */
+  /* border-radius: 6px; */
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.start-course-overlay-header {
+  position: absolute;
+  top: 0px;
+  right: 6px;
+  bottom: 0px;
+  left: 6px;
+  background-color: #00000057;
+  /* opacity: 0.2; */
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.start-map-image {
+  margin: 0px 6px;
+}
+
+.react-carousel-responsive__track {
+  gap: 0px !important;
+}
+
+.start-map-image > img {
+  object-fit: cover;
+  width: 100%;
+  height: 231px;
+  border-radius: 6px;
+}
+
+.start-image-sub {
+  display: none;
+}
+
+.start-image-ongoing {
+  position: relative;
+  cursor: pointer;
+}
+
+.start-image-sub {
+  position: absolute;
+  top: 8px;
+  color: var(--primaryFontClr);
+  z-index: 1;
+  left: 19px;
+  display: none;
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.react-tabs__tab-list {
+  /* border-bottom: 1px solid #aaa; */
+  margin: 0 0 10px;
+  padding: 0;
+  border-bottom: none;
+}
+
+.start-course-categories-Icon img {
+  height: 30px;
+  width: 30px;
+}
+
+.start-time-icon {
+  padding-top: 4px;
+}
+
+.slick-dots li button:before {
+  color: rgba(238, 92, 77, 0.3);
+  opacity: 14.25;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ee5c4d;
+}
+
+.mobileSlider {
+  display: none;
+}
+
+.webslider {
+  margin-bottom: 38px;
+  margin-right: 20px;
+}
+
+.No-popular {
+  width: 100%;
+  text-align: center;
+  font-family: "Biko";
+  font-style: normal;
+  font-size: 18px;
+  line-height: 50px;
+}
+
+.No-newest {
+  width: 100%;
+  text-align: center;
+  font-family: "Biko";
+  font-style: normal;
+  font-size: 18px;
+  line-height: 50px;
+}
+
+@media only screen and (max-width: 800px) {
+  .start-course1,
+  .start-choice1 {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    /* flex-basis: 40%; */
+    gap: 20px;
+  }
+
+  .start-map-image {
+    margin-bottom: 20px;
+    /* width: 100vw; */
+  }
+
+  .start-choice1 {
+    /* padding-top: 34px; */
+  }
+
+  /* .slick-slider {
+   
+    width: 121%;
+} */
+  .webslider {
+    display: none;
+  }
+
+  .mobileSlider {
+    display: block;
+  }
+
+  ::-webkit-scrollbar {
+    /* display: none; */
+    height: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    width: 24px !important;
+    z-index: 100;
+  }
+
+  .react-carousel-responsive__track {
+    gap: 2px;
+  }
+
+  .start-map-image > img {
+    height: 190px;
+  }
+
+  .start-course1-image img {
+    height: 204px;
+    /* width: 298px; */
+    /* width: auto; */
+    width: 300px;
+    /* margin: 0 10px; */
+    margin-right: 13px;
+    object-fit: cover;
+  }
+
+  .start-choice-subcategory-image img {
+    height: 150px;
+    width: 250px;
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  /* .start-map-image>img {
+    height: 150px;
+    width: 190px;
+  } */
+
+  .start-title-container {
+    flex-direction: column;
+    padding: unset;
+    padding-left: 20px;
+    width: 100%;
+    justify-content: unset;
+    text-align: end;
+    align-items: flex-start;
+  }
+
+  .start-course-section2-title {
+    /* font-size: 14px; */
+  }
+
+  .start-course1-image {
+    margin-top: 20px;
+  }
+
+  .start-course-button, 
+  .start-designbtn {
+    margin-top: 10px;
+    padding: unset;
+    width: 70px;
+    height: 30px;
+    border-radius: 6px;
+    font-size: 11px;
+}
+
+  .start-course-section2 {
+    padding: unset;
+  }
+
+  .start-course-section2-first {
+    display: none;
+  }
+
+  .start-image-sub {
+    display: flex;
+  }
+
+  .start-course-categories-Body {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+
+  /* .react-carousel-responsive__inner {
+    margin-bottom: 19px;
+  } */
+  .react-carousel-responsive__inner {
+    position: relative;
+  }
+
+  .start-course-overlay-2 {
+    border-radius: 6px;
+  }
+
+  .start-title-text {
+    /* width: max-content; */
+    /* left: 9px; */
+  }
+
+  .start-course-button {
+    padding: unset;
+    width: 90px;
+    height: 30px;
+  }
+
+  .slick-list {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .react-carousel-responsive__controlPrev {
+    display: none;
+  }
+
+  .start-course-overlay {
+    position: absolute;
+    top: 0;
+    right: 14px;
+    bottom: 3px;
+    left: 0;
+    background-color: #0000003b;
+    opacity: 2.2;
+    border-radius: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+  }
+
+  .start-course-overlay-header {
+    position: absolute;
+    top: 0px;
+    right: 6px;
+    bottom: 3px;
+    left: 6px;
+    background-color: #0000005e;
+    /* opacity: 0.2; */
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .react-carousel-responsive__inner {
+    position: relative;
+    width: 143%;
+  }
+
+  .start-map-image > img {
+    /* width: 300px; */
+    /* position: absolute; */
+    /* margin-bottom: 20px; */
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .react-carousel-responsive__inner {
+    position: relative;
+    width: 221%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .react-carousel-responsive__inner {
+    position: relative;
+    width: 259%;
+  }
+}
+
+.all-tabs-home {
+  display: flex;
+  width: 20%;
+}
+
+.home-tab-1 {
+  padding: 10px 15px;
+  font-size: 15px;
+  margin-right: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.home-tab-1-active {
+  padding: 10px 15px;
+  font-size: 15px;
+  margin-right: 15px;
+  border-radius: 6px;
+  background-color: #dfe7f4;
+  cursor: pointer;
+  color: #092963;
+}
+
+.slick-dots li button:before {
+  font-size: 10px;
+}

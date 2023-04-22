@@ -1,0 +1,67 @@
+.course-accordian {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.course-accordian-heading {
+    cursor: pointer;
+    height: 50px;
+    padding: 7px 10px 0 10px;
+    /* display: flex; */
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.course-accordian-heading:hover{
+    background-color: #ddd;
+}
+
+.course-accordian-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+}
+
+.course-accordian-container-title {
+    color: #494949;
+    text-transform: capitalize;
+}
+.course-accordian-container-title-active {
+    color: green;
+    text-transform: capitalize;
+}
+
+.course-accordian-container-state {
+    font-size: 30px;
+    color: var(--secondaryClr);
+    animation: rotate 0.3s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+.course-accordian-content {
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    height: 0;
+    opacity: 0;
+}
+
+.accordian-show {
+    height: auto;
+    opacity: 1;
+}
+
+.course-accordian-container-body {
+    text-align: justify;
+    margin-top: 10px;
+}
