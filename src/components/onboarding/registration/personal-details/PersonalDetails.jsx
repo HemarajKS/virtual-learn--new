@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
-import { info_btn } from "../../../../utils/svgIcons";
-import "./PersonalDetails.css";
-import { signupSchema } from "./schema";
-import { Formik, useFormik } from "formik";
-import ReactTooltip from "react-tooltip";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from 'react';
+import { info_btn } from '../../../../utils/svgIcons';
+import './PersonalDetails.css';
+import { signupSchema } from './schema';
+import { Formik, useFormik } from 'formik';
+import ReactTooltip from 'react-tooltip';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   registerOtp,
   registerPersonalDetails,
   registerSuccess,
-} from "../../../../redux/reducers/Conditions";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import Loading from "../../../../utils/loading/Loading";
+} from '../../../../redux/reducers/Conditions';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Loading from '../../../../utils/loading/Loading';
 
 const PersonalDetails = () => {
   const [personaldata, setpersonaldata] = useState({});
@@ -25,12 +25,12 @@ const PersonalDetails = () => {
   const { values, errors, handleChange, touched, handleBlur, handleSubmit } =
     useFormik({
       initialValues: {
-        email: "",
-        UserName: "",
-        password: "",
-        ConfirmPassword: "",
-        fullName: "",
-        mobileNumber: sessionStorage.getItem("regMobileNum"),
+        email: sessionStorage.getItem('regMobileNum'),
+        UserName: '',
+        password: '',
+        ConfirmPassword: '',
+        fullName: '',
+        mobileNumber: '',
       },
       validationSchema: signupSchema,
       onSubmit: (values, action) => {
@@ -39,11 +39,13 @@ const PersonalDetails = () => {
         // dispatch(registerSuccess(false))
         // navigate('/accountCreatedSuccessfully')
         const data = {
-          mobileNumber: sessionStorage.getItem("regMobileNum"),
+          email: sessionStorage.getItem('regMobileNum'),
           fullName: values.fullName,
           userName: values.UserName,
-          email: values.email,
+          mobileNumber: values.mobileNumber,
           password: values.password,
+          cPassword: values.ConfirmPassword,
+          tempKey: sessionStorage.getItem('tempKey'),
         };
 
         sendUserdata(data);
@@ -56,28 +58,27 @@ const PersonalDetails = () => {
 
   const sendUserdata = (data) => {
     setLoading(true);
-    fetch(
-      `http://virtuallearn-env.eba-6xmym3vf.ap-south-1.elasticbeanstalk.com/newUser/register`,
-      {
-        method: "POST",
-        headers: {
-          Accept: "application/json, text/plain, */*",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      }
-    )
+    fetch(`https://virtual-learn-backend.onrender.com/auth/userDetails`, {
+      method: 'PUT',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
       .then((res) => res.json())
       .then((res) => {
         setLoading(false);
-        console.log("res", res);
-        if (res.message === "User Created") {
+        console.log('res', res);
+        if (res[0]) {
           dispatch(registerSuccess(true));
-          navigate("/accountCreatedSuccessfully");
+          navigate('/accountCreatedSuccessfully');
+        } else {
+          showError(res[1].message);
         }
       })
       .catch((err) => {
-        showError("Some error occured");
+        showError('Some error occured');
         setLoading(false);
       });
   };
@@ -87,14 +88,14 @@ const PersonalDetails = () => {
       <div className="loginAuth-showError">
         <div className="loginAuth-showErrorIcon">
           <img
-            src={require("../../../../assets/icons/icn_invalid error.png")}
+            src={require('../../../../assets/icons/icn_invalid error.png')}
             alt="invalid"
           />
         </div>
         <div className="loginAuth-showErrorMessage">{msg}</div>
       </div>,
       {
-        position: "bottom-right",
+        position: 'bottom-right',
         autoClose: 5000,
         hideProgressBar: true,
         pauseOnHover: true,
@@ -121,13 +122,13 @@ const PersonalDetails = () => {
               id="mobileNumber"
               name="mobileNumber"
               placeholder=" "
-              value={sessionStorage.getItem("regMobileNum")}
+              value={sessionStorage.getItem('regMobileNum')}
               onChange={handleChange}
               onBlur={handleBlur}
               autoComplete="off"
               // maxLength={10}
             />
-            <label htmlFor="mobileNumber">Mobile Number</label>
+            <label htmlFor="mobileNumber">Email Id</label>
             {errors.mobileNumber && touched.mobileNumber ? (
               <>
                 <div className="personal-error-line"></div>
@@ -181,7 +182,6 @@ const PersonalDetails = () => {
 
           <div className="personal-input">
             <input
-              type="email"
               className="PeronsalDetailsInput"
               id="email"
               name="email"
@@ -191,11 +191,13 @@ const PersonalDetails = () => {
               onBlur={handleBlur}
               autoComplete="off"
             />
-            <label htmlFor="email">Email Id</label>
-            {errors.email && touched.email ? (
+            <label htmlFor="email">Mobile Number</label>
+            {errors.mobileNumber && touched.mobileNumber ? (
               <>
                 <div className="personal-error-line"></div>
-                <p className="personaldetail-form-error">{errors.email}</p>
+                <p className="personaldetail-form-error">
+                  {errors.mobileNumber}
+                </p>
               </>
             ) : null}
           </div>

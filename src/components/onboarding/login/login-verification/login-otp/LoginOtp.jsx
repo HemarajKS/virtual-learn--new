@@ -42,34 +42,28 @@ const LoginVerfication = () => {
   const sendOtpServer = (otp, url) => {
     setLoading(true);
     console.log('OTP', otp, url);
-    fetch(
-      `http://virtuallearn-env.eba-6xmym3vf.ap-south-1.elasticbeanstalk.com${url}`,
-      {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json, text/plain, */*',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          mobileNumber: sessionStorage.getItem('regMobileNum'),
-          oneTimePassword: otp,
-        }),
-      }
-    )
+    fetch(`https://virtual-learn-backend.onrender.com/auth/verify`, {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: sessionStorage.getItem('regMobileNum'),
+        otp: otp,
+      }),
+    })
       .then((res) => res.json())
       .then((res) => {
         console.log('response', res);
         setLoading(false);
         if (location.pathname === '/onboarding/registerOtp') {
-          if (res && res.message === 'Verified') {
+          if (res[0]) {
+            sessionStorage.setItem('tempKey', res[1].key);
             dispatch(registerPersonalDetails(true));
             navigate('/onboarding/personalDetails');
-          } else if (res.message === 'Input field is incorrect') {
-            dispatch(registerPersonalDetails(false));
-            showError(res.message);
-          } else if (res.message === 'Verification Fail') {
-            dispatch(registerPersonalDetails(false));
-            showError(res.message);
+          } else {
+            showError(res[1].message);
           }
         }
         if (location.pathname === '/onboarding/otpVerification') {
@@ -168,9 +162,9 @@ const LoginVerfication = () => {
               onClick={() => {
                 setLoading(true);
                 fetch(
-                  `http://virtuallearn-env.eba-6xmym3vf.ap-south-1.elasticbeanstalk.com/newUser/resend`,
+                  `https://virtual-learn-backend.onrender.com/auth/resendOTP`,
                   {
-                    method: 'PUT',
+                    method: 'POST',
                     headers: {
                       Accept: 'application/json, text/plain, */*',
                       'Content-Type': 'application/json',
@@ -183,8 +177,10 @@ const LoginVerfication = () => {
                   .then((res) => res.json())
                   .then((res) => {
                     setLoading(false);
-                    if (res.message === 'OTP Valid For 2 Minutes') {
+                    if (res[0]) {
                       resent(res.message);
+                    } else {
+                      showError(res[1].message);
                     }
                   })
                   .catch((err) => {

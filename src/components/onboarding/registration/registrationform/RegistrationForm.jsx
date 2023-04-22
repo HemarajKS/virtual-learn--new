@@ -20,7 +20,7 @@ const RegistrationForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const phoneSchema = yup.string().phone().required();
+  const phoneSchema = yup.string().email().required();
   const phoneNumValidation = (e) => {
     setMobileNum(e.target.value);
     (async () => {
@@ -38,31 +38,25 @@ const RegistrationForm = () => {
 
   const mobileReg = (mobileNum) => {
     setLoading(true);
-    fetch(
-      'http://virtuallearn-env.eba-6xmym3vf.ap-south-1.elasticbeanstalk.com/newUser/continue',
-      {
-        method: 'put',
-        headers: {
-          Accept: 'application/json, text/plain, */*',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ mobileNumber: mobileNum }),
-      }
-    )
+    fetch('https://virtual-learn-backend.onrender.com/auth/signUp', {
+      method: 'post',
+      headers: {
+        Accept: 'application/json, text/plain, */*',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email: mobileNum }),
+    })
       .then((res) => res.json())
       .then((res) => {
+        console.log('res', res);
         setLoading(false);
-        console.log('response', res);
-        if (res.message === 'OTP Valid For 2 Minutes') {
+        if (res[0]) {
           dispatch(registerOtp(true));
           navigate('/onboarding/registerOtp');
           sessionStorage.setItem('regMobileNum', mobileNum);
-        } else if (res.message === 'Please Enter Valid Phone Number') {
-          dispatch(registerOtp(false));
-          showError(res.message);
         } else {
           dispatch(registerOtp(false));
-          showError(res.message);
+          showError(res[1].message);
         }
       })
       .catch((err) => {
@@ -122,18 +116,18 @@ const RegistrationForm = () => {
               gap: '10px',
             }}
           >
-            <div
+            {/* <div
               className="loginAuth-formInput"
               style={{ borderBottom: '0px solid red' }}
             >
               <p>+91</p>
-            </div>
+            </div> */}
             <div className="loginAuth-FormInput" style={{ width: '100%' }}>
               <input
                 type="text"
                 name="mobileNum"
                 id="mobileNum"
-                placeholder="Enter your mobile number"
+                placeholder="Enter your Email Id"
                 style={{ width: '100%' }}
                 className={
                   mobileNum === ''
@@ -148,7 +142,7 @@ const RegistrationForm = () => {
               />
               {/* loginAuth-formInputSuccess */}
               {/* loginAuth-formInputError */}
-              <label htmlFor="mobileNum">Mobile Number</label>
+              <label htmlFor="mobileNum">Email Id</label>
             </div>
           </div>
           <button className="loginAuth-formSubmit" disabled={!invalidPhone}>

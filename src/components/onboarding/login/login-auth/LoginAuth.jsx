@@ -1,12 +1,12 @@
-import "./LoginAuth.css";
-import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import { facebookIcon, googleIcon } from "../../../../utils/svgIcons";
-import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../../../redux/reducers/loginSlice";
-import { useEffect, useState } from "react";
-import Loading from "../../../../utils/loading/Loading";
+import './LoginAuth.css';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { facebookIcon, googleIcon } from '../../../../utils/svgIcons';
+import { useDispatch, useSelector } from 'react-redux';
+import { login } from '../../../../redux/reducers/loginSlice';
+import { useEffect, useState } from 'react';
+import Loading from '../../../../utils/loading/Loading';
 
 const LoginAuth = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -14,21 +14,23 @@ const LoginAuth = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const loginResponse = useSelector((state) => state.login);
+  const loginResponse = useSelector((state) => state.login).data.data;
+  const token = useSelector((state) => state.login);
+  console.log(token);
 
   const showError = (msg) => {
     toast(
       <div className="loginAuth-showError">
         <div className="loginAuth-showErrorIcon">
           <img
-            src={require("../../../../assets/icons/icn_invalid error.png")}
+            src={require('../../../../assets/icons/icn_invalid error.png')}
             alt="invalid"
           />
         </div>
         <div className="loginAuth-showErrorMessage">{msg}</div>
       </div>,
       {
-        position: "bottom-right",
+        position: 'bottom-right',
         autoClose: 5000,
         hideProgressBar: true,
         pauseOnHover: true,
@@ -46,7 +48,7 @@ const LoginAuth = () => {
       password: e.target.password.value,
     };
 
-    if (e.target.username.value !== "" && e.target.password.value !== "") {
+    if (e.target.username.value !== '' && e.target.password.value !== '') {
       dispatch(login(credentials));
 
       // localStorage.setItem('auth', 'true')
@@ -60,47 +62,36 @@ const LoginAuth = () => {
     responseFunction();
   }, [loginResponse && loginResponse.isRejected && loginResponse.message]);
 
+  // useEffect(() => {
+  //   loginResponse.loading && setLoading(true);
+  //   !loginResponse.loading && setLoading(false);
+  // }, [loginResponse && loginResponse.loading]);
+  console.log(loginResponse);
   useEffect(() => {
-    loginResponse.loading && setLoading(true);
-    !loginResponse.loading && setLoading(false);
-  }, [loginResponse && loginResponse.loading]);
-
-  useEffect(() => {
-    if (
-      loginResponse &&
-      loginResponse.data &&
-      loginResponse.data.data &&
-      loginResponse.data.data.status &&
-      loginResponse.data.data.status === "Login successfully"
-    ) {
-      sessionStorage.setItem("auth", "true");
-      navigate("/");
+    if (loginResponse && loginResponse[0]) {
+      sessionStorage.setItem('auth', 'true');
+      navigate('/');
       // window.location.reload();
     } else {
-      loginResponse &&
-        loginResponse.data &&
-        loginResponse.data.data &&
-        loginResponse.data.data.message &&
-        showError(
-          loginResponse && loginResponse.data && loginResponse.data.data.message
-        );
+      showError(loginResponse && loginResponse[1] && loginResponse[1].message);
     }
 
     sessionStorage.setItem(
-      "Token",
-      loginResponse &&
-        loginResponse.data &&
-        loginResponse.data.headers &&
-        loginResponse.data.headers["jwt-token"]
+      'Token',
+      token &&
+        token.data &&
+        token.data.headers &&
+        token.data.headers['jwt-token'] &&
+        token.data.headers['jwt-token']
     );
-  }, [loginResponse && loginResponse.isSuccess && loginResponse.data]);
+  }, [loginResponse && loginResponse[0]]);
 
   const responseFunction = () => {
-    if (loginResponse && loginResponse.message && loginResponse.message.error) {
-      showError(loginResponse.message.error);
+    if (loginResponse && loginResponse[1] && loginResponse[1].message) {
+      showError(loginResponse[1].message);
     }
-    if (loginResponse && submitted && !loginResponse.message) {
-      showError("Server Error");
+    if (loginResponse && submitted && !loginResponse[0]) {
+      showError('Server Error');
     }
   };
 
@@ -121,7 +112,7 @@ const LoginAuth = () => {
           autoComplete="off"
           onSubmit={submitHandler}
         >
-          {" "}
+          {' '}
           <div className="loginAuth-FormInput">
             <input
               type="text"
@@ -148,29 +139,29 @@ const LoginAuth = () => {
           <div
             className="loginAuth-noAccount"
             style={{
-              width: " 100%",
-              display: "flex",
-              justifyContent: "flex-end",
+              width: ' 100%',
+              display: 'flex',
+              justifyContent: 'flex-end',
             }}
           >
             <span
               className="loginAuth-regLink"
               onClick={() => {
-                navigate("/onboarding/forgotPassword");
+                navigate('/onboarding/forgotPassword');
               }}
             >
-              Forgot password?{" "}
+              Forgot password?{' '}
             </span>
           </div>
           <button className="loginAuth-formSubmit">Continue</button>
         </form>
 
         <div className="loginAuth-noAccount">
-          Don’t have a account?{" "}
+          Don’t have a account?{' '}
           <span
             className="loginAuth-regLink"
             onClick={() => {
-              navigate("/onboarding/register");
+              navigate('/onboarding/register');
             }}
           >
             Register
