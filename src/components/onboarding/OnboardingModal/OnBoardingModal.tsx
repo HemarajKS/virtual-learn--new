@@ -7,17 +7,13 @@ const OnBoardingModal = (props: any) => {
   useEffect(() => {
     axios
       .get(
-        `http://virtuallearn-env.eba-6xmym3vf.ap-south-1.elasticbeanstalk.com/${
-          props.title === 'Privacy Policy'
-            ? 'privacyPolicy'
-            : 'termsAndConditions'
+        `
+https://virtual-learn-backend.onrender.com/misc/${
+          props.title === 'Privacy Policy' ? 'privacyPolicy' : 'termsOfService'
         }`
       )
       .then((response) => {
-        response &&
-          response.data &&
-          response.data.message &&
-          setdata(response.data.message);
+        response && response.data && setdata(response.data[1]);
       });
   }, [props]);
 
@@ -56,7 +52,8 @@ const OnBoardingModal = (props: any) => {
                 </div>
               </div>
               <div className="quizModal-text" style={{ textAlign: 'justify' }}>
-                {data}
+                {/* {data} */}
+                <div dangerouslySetInnerHTML={{ __html: data }} />
               </div>
 
               <div className="headerSearch-filterModalButtons"></div>

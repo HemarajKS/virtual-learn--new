@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
-import "./Profile.css";
+import React, { useEffect, useState } from 'react';
+import './Profile.css';
 import {
   closeProfile,
   editProfile,
   privacyIcon,
   rightArrowPrivacy,
-} from "../../../../utils/svgIcons";
-import { useDispatch, useSelector } from "react-redux";
+} from '../../../../utils/svgIcons';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   editProfileSection,
   notificationSection,
@@ -16,13 +16,13 @@ import {
   settingsSection,
   showChangePasswordSection,
   termsSection,
-} from "../../../../redux/reducers/headerProfileOptions";
-import ChangePassword from "../changePassword/ChangePassword";
-import EditProfile from "../edit-profile/EditProfile";
-import profileData from "../../../../api-results/ProfileResults.json";
-import axios from "axios";
-import { ProfileClick } from "../../../../redux/reducers/EditProfileData";
-import { MobileNotifyClick } from "../../../../redux/reducers/MobileNotification";
+} from '../../../../redux/reducers/headerProfileOptions';
+import ChangePassword from '../changePassword/ChangePassword';
+import EditProfile from '../edit-profile/EditProfile';
+import profileData from '../../../../api-results/ProfileResults.json';
+import axios from 'axios';
+import { ProfileClick } from '../../../../redux/reducers/EditProfileData';
+import { MobileNotifyClick } from '../../../../redux/reducers/MobileNotification';
 
 const Profile = () => {
   const dispatch = useDispatch();
@@ -35,7 +35,7 @@ const Profile = () => {
     dispatch(MobileNotifyClick());
   };
 
-  const [profileData1, setProfileData] = useState("");
+  const [profileData1, setProfileData] = useState('');
   const showChangePassword = () => {
     dispatch(showChangePasswordSection(true));
   };
@@ -94,20 +94,27 @@ const Profile = () => {
                   src={
                     profileData &&
                     profileData.data &&
-                    profileData.data.profilePhoto
-                      ? profileData.data.profilePhoto
-                      : require("../../../../assets/images/start-courses-image/profilepic.jpg")
+                    profileData.data[1] &&
+                    profileData.data[1].profilePic
+                      ? profileData.data[1].profilePic
+                      : require('../../../../assets/images/start-courses-image/profilepic.jpg')
                   }
                 />
               </div>
               <div className="profile-image-name">
                 <p className="name">
-                  {profileData && profileData.data && profileData.data.fullName}
+                  {profileData &&
+                    profileData.data &&
+                    profileData.data[1] &&
+                    profileData.data[1].fullName &&
+                    profileData.data[1].fullName}
                 </p>
                 <p className="role">
                   {profileData &&
                     profileData.data &&
-                    profileData.data.occupation}
+                    profileData.data[1] &&
+                    profileData.data[1].occupation &&
+                    profileData.data[1].occupation}
                 </p>
               </div>
             </div>
@@ -148,7 +155,9 @@ const Profile = () => {
                   <p className="pd-value">
                     {profileData &&
                       profileData.data &&
-                      profileData.data.fullName}
+                      profileData.data[1] &&
+                      profileData.data[1].fullName &&
+                      profileData.data[1].fullName}
                   </p>
                 </div>
                 <div className="personal-detail-section">
@@ -156,13 +165,19 @@ const Profile = () => {
                   <p className="pd-value">
                     {profileData &&
                       profileData.data &&
-                      profileData.data.userName}
+                      profileData.data[1] &&
+                      profileData.data[1].userName &&
+                      profileData.data[1].userName}
                   </p>
                 </div>
                 <div className="personal-detail-section">
                   <p className="pd-title">Email ID</p>
                   <p className="pd-value">
-                    {profileData && profileData.data && profileData.data.email}
+                    {profileData &&
+                      profileData.data &&
+                      profileData.data[1] &&
+                      profileData.data[1].email &&
+                      profileData.data[1].email}
                   </p>
                 </div>
                 <div className="personal-detail-section">
@@ -170,7 +185,9 @@ const Profile = () => {
                   <p className="pd-value">
                     {profileData &&
                       profileData.data &&
-                      profileData.data.mobileNumber}
+                      profileData.data[1] &&
+                      profileData.data[1].mobileNumber &&
+                      profileData.data[1].mobileNumber}
                   </p>
                 </div>
                 <div className="personal-detail-section">
@@ -178,7 +195,9 @@ const Profile = () => {
                   <p className="pd-value">
                     {profileData &&
                       profileData.data &&
-                      profileData.data.occupation}
+                      profileData.data[1] &&
+                      profileData.data[1].occupation &&
+                      profileData.data[1].occupation}
                   </p>
                 </div>
                 {profileData &&

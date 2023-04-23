@@ -1,9 +1,9 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
-import type { AxiosError } from "axios";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
+import type { AxiosError } from 'axios';
 
 const initialState = {
-  message: "",
+  message: '',
   data: {},
   headers: [],
   isSuccess: false,
@@ -12,14 +12,14 @@ const initialState = {
 };
 
 export const ProfileClick: any = createAsyncThunk(
-  "ProfileClick/EditProfileData",
+  'ProfileClick/EditProfileData',
   async (arg: any, { rejectWithValue }) => {
     try {
       const fetchedEditData: any = await axios.request({
-        method: "get",
-        url: `http://virtuallearn-env.eba-6xmym3vf.ap-south-1.elasticbeanstalk.com/user/myProfile`,
+        method: 'get',
+        url: `https://virtual-learn-backend.onrender.com/misc/Profile`,
         headers: {
-          Authorization: `Bearer ${sessionStorage.getItem("Token")}`,
+          Authorization: `Bearer ${sessionStorage.getItem('Token')}`,
         },
       });
 
@@ -34,7 +34,7 @@ export const ProfileClick: any = createAsyncThunk(
 );
 
 export const EditProfileSlice = createSlice({
-  name: "EditProfileData",
+  name: 'EditProfileData',
   initialState,
   reducers: {},
   extraReducers: (builder) => {

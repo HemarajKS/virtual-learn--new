@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
-import "./ChangePassword.css";
-import { useDispatch, useSelector } from "react-redux";
-import { arrowRight, warningIcon } from "../../../../utils/svgIcons";
+import React, { useState, useEffect } from 'react';
+import './ChangePassword.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { arrowRight, warningIcon } from '../../../../utils/svgIcons';
 import {
   editProfileSection,
   profileDrawer,
   showChangePasswordSection,
-} from "../../../../redux/reducers/headerProfileOptions";
-import axios from "axios";
-import toast, { Toaster } from "react-hot-toast";
+} from '../../../../redux/reducers/headerProfileOptions';
+import axios from 'axios';
+import toast, { Toaster } from 'react-hot-toast';
 
 const ChangePassword = () => {
-  const [newpassword, setNewPassword] = useState("");
-  const [cPassword, setCpassword] = useState("");
-  const [currentPass, setCurrentPassword] = useState("");
+  const [newpassword, setNewPassword] = useState('');
+  const [cPassword, setCpassword] = useState('');
+  const [currentPass, setCurrentPassword] = useState('');
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -35,7 +35,7 @@ const ChangePassword = () => {
         </div>
       </div>
     ));
-//Toast-CurrentNew
+  //Toast-CurrentNew
   const CurrentNew = () =>
     toast.error((w) => (
       <div className="toast-div-password">
@@ -61,56 +61,57 @@ const ChangePassword = () => {
         </div>
       </div>
     ));
-  
-    const ErrorPassword = () =>
-      toast.error((w) => (
-        <div className="toast-div-password">
-          Password Change Failed
-          <div
-            className="toast-close-password"
-            onClick={() => toast.dismiss(w.id)}
-          >
-            X
-          </div>
+
+  const ErrorPassword = () =>
+    toast.error((w) => (
+      <div className="toast-div-password">
+        Password Change Failed
+        <div
+          className="toast-close-password"
+          onClick={() => toast.dismiss(w.id)}
+        >
+          X
         </div>
-      ));
+      </div>
+    ));
 
   const handleChangePassword = (e) => {
     e.preventDefault();
-    const NewPassword = document.getElementById("newPassword").value;
-    const ConfirmPassword = document.getElementById("confirmPassword").value;
-    const CurrentPassword = document.getElementById("currentPassword").value;
+    const NewPassword = document.getElementById('newPassword').value;
+    const ConfirmPassword = document.getElementById('confirmPassword').value;
+    const CurrentPassword = document.getElementById('currentPassword').value;
     if (NewPassword === ConfirmPassword && NewPassword !== CurrentPassword) {
       axios
         .request(
-          ` http://virtuallearn-env.eba-6xmym3vf.ap-south-1.elasticbeanstalk.com/user/changePassword`,
+          `https://virtual-learn-backend.onrender.com/misc/changePassword`,
           {
-            method: "post",
+            method: 'put',
             headers: {
-              Authorization: `Bearer ${sessionStorage.getItem("Token")}`,
+              Authorization: `Bearer ${sessionStorage.getItem('Token')}`,
             },
             data: {
-              currentPassword: currentPass,
-              newPassword: newpassword,
+              password: CurrentPassword,
+              nPassword: newpassword,
+              cPassword: ConfirmPassword,
             },
           }
-        ).then((res)=>{
+        )
+        .then((res) => {
           successPassword();
         })
         .catch((Err) => {
           console.log(Err);
           ErrorPassword();
         });
-      
-      setNewPassword("");
-      setCpassword("");
-      setCurrentPassword("");
+
+      setNewPassword('');
+      setCpassword('');
+      setCurrentPassword('');
       console.log(newpassword);
     } else {
       if (NewPassword !== ConfirmPassword) {
         PasswordMatch();
-      }
-      else {
+      } else {
         CurrentNew();
       }
     }
@@ -210,7 +211,7 @@ const ChangePassword = () => {
         {/* <div className="toast">add toast here</div> */}
       </div>
       <Toaster
-        position="bottom-center" 
+        position="bottom-center"
         containerStyle={{
           top: 20,
           left: 20,
@@ -218,23 +219,23 @@ const ChangePassword = () => {
           right: 20,
         }}
         toastOptions={{
-          className: "",
+          className: '',
           success: {
             duration: 1500,
             style: {
-              border: "1px solid #AAFF00",
-              padding: "10px",
-              color: "green",
-              width: "350px",
+              border: '1px solid #AAFF00',
+              padding: '10px',
+              color: 'green',
+              width: '350px',
             },
           },
           error: {
             duration: 1500,
             style: {
-              border: "1px solid #ee5c4d",
-              padding: "10px",
-              color: "#ee5c4d",
-              width: "350px",
+              border: '1px solid #ee5c4d',
+              padding: '10px',
+              color: '#ee5c4d',
+              width: '350px',
             },
           },
         }}
